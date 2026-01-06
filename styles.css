@@ -1,0 +1,174 @@
+/* =========================================
+   1. FONTS & VARIABLES
+   ========================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+:root {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* COLOR PALETTE: Hunter Green & Cream */
+  --brand-green: #0e3e2b;
+  --brand-white: #ffffff;
+  --brand-cream: #f4f4f0;
+  --brand-gray: #e9ecef;
+
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--brand-green);
+  background-color: var(--brand-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Utility */
+h1,
+h2,
+h3,
+h4,
+.navbar-brand {
+  font-family: var(--font-serif);
+  color: var(--brand-green);
+}
+
+/* =========================================
+      2. NAVBAR
+      ========================================= */
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: padding var(--transition-speed);
+  background-color: var(--brand-white) !important;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  color: var(--brand-green) !important;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-green) !important;
+  margin: 0 0.5rem;
+  opacity: 0.7;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================================
+      3. HERO SECTION (Index Page)
+      ========================================= */
+.split-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--brand-cream) !important;
+}
+
+.hero-img-col {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+}
+
+/* Badge Override */
+.badge.bg-black {
+  background-color: var(--brand-green) !important;
+}
+
+/* =========================================
+      4. MENU CARDS (Index Page Hover)
+      ========================================= */
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hover-card img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  display: block;
+}
+
+.hover-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+      5. FOOTER
+      ========================================= */
+.footer-section {
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+  font-family: var(--font-serif);
+  margin-bottom: 1.5rem;
+  color: var(--brand-white);
+}
+
+/* Map Styling: Green Hue Filter */
+iframe {
+  filter: grayscale(100%) sepia(100%) hue-rotate(100deg) brightness(0.9);
+  transition: filter var(--transition-speed);
+}
+iframe:hover {
+  filter: none;
+}
+
+/* =========================================
+      6. GREEN THEME OVERRIDES (Global)
+      ========================================= */
+/* Forces "bg-black" to be Green */
+.bg-black {
+  background-color: var(--brand-green) !important;
+}
+
+.text-black {
+  color: var(--brand-green) !important;
+}
+
+/* Buttons */
+.btn-dark {
+  background-color: var(--brand-green) !important;
+  border-color: var(--brand-green) !important;
+  color: var(--brand-white);
+}
+
+.btn-outline-dark {
+  color: var(--brand-green) !important;
+  border-color: var(--brand-green) !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--brand-green) !important;
+  color: var(--brand-white) !important;
+}
+
+/* Footer Text Fixes */
+.bg-black .text-muted,
+.bg-black .text-secondary {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
