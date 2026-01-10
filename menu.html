@@ -11,6 +11,68 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* specific overrides for the menu leaders */
+      .menu-group-title {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        color: var(--brand-green);
+        border-bottom: 2px solid var(--brand-green);
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+      
+      .menu-item-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+      }
+
+      .menu-item-name {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 600;
+        position: relative;
+        background-color: var(--brand-cream); /* Masks the dots behind text */
+        z-index: 1;
+        padding-right: 10px;
+        color: var(--brand-green);
+      }
+
+      .menu-item-price {
+        font-family: var(--font-sans);
+        font-weight: 600;
+        background-color: var(--brand-cream); /* Masks the dots behind text */
+        z-index: 1;
+        padding-left: 10px;
+        color: var(--brand-green);
+      }
+
+      .menu-dots {
+        flex-grow: 1;
+        border-bottom: 2px dotted #bccbc4;
+        height: 1px;
+        position: relative;
+        top: -6px; /* Align dots with text baseline */
+        opacity: 0.6;
+      }
+
+      .menu-desc {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+        max-width: 90%;
+      }
+      
+      .modifier-box {
+        background-color: white;
+        border: 1px solid var(--brand-green);
+        padding: 1.5rem;
+      }
+    </style>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -22,7 +84,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
   </head>
-  <body>
+  <body style="background-color: var(--brand-cream);">
     <nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
       <div class="container-fluid px-lg-5">
         <a
@@ -43,6 +105,8 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
               <a class="nav-link active" href="menu.html">Menu</a>
             </li>
             <li class="nav-item">
@@ -61,167 +125,205 @@
       </div>
     </nav>
 
-    <header
-      class="text-white pt-5 pb-5 mt-5"
-      style="
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url('assets/team-placeholder.jpg')
-            center/cover no-repeat;
-      "
-    >
-      <div class="container pt-5 pb-4 text-center">
-        <h1 class="display-2 fw-bold mb-3">The Menu</h1>
-        <p class="lead text-white-50">
-          Precision espresso. House-made syrups. No upcharge for oat milk.
+    <header class="pt-5 mt-5 text-center">
+      <div class="container pt-5 pb-3">
+        <h1 class="display-1 fw-bold mb-2">The Menu</h1>
+        <p class="lead text-muted" style="max-width: 600px; margin: 0 auto;">
+          Curated by Joy. Precision espresso, house-made syrups, and zero upcharge for oat milk.
         </p>
       </div>
     </header>
 
-    <section class="py-5 bg-white">
-      <div class="container py-4">
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <h2 class="mb-4 display-6 border-bottom pb-2">Signature Drinks</h2>
-            <div class="menu-item mb-4">
-              <div class="d-flex justify-content-between align-items-baseline">
-                <h3 class="h4 fw-bold mb-1">The Social</h3>
-                <span class="fs-5 fw-bold">$6.50</span>
+    <section class="py-5">
+      <div class="container">
+        
+        <div class="row gx-lg-5">
+          
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            
+            <div class="mb-5">
+              <h3 class="menu-group-title">Signatures</h3>
+              
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">The Social</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.50</span>
+                </div>
+                <p class="menu-desc">Brown sugar, cinnamon, double espresso, heavy cream top. <em class="small text-danger">(Iced Only)</em></p>
               </div>
-              <p class="text-muted mb-0">
-                Brown sugar, cinnamon, double espresso, cream top.
-                <em class="small">(Iced Only)</em>
-              </p>
-            </div>
-            <div class="menu-item mb-4">
-              <div class="d-flex justify-content-between align-items-baseline">
-                <h3 class="h4 fw-bold mb-1">The Dulce</h3>
-                <span class="fs-5 fw-bold">$6.50</span>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">The Dulce</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.50</span>
+                </div>
+                <p class="menu-desc">Condensed milk, cinnamon, double espresso, milk choice.</p>
               </div>
-              <p class="text-muted mb-0">
-                Condensed milk, cinnamon, double espresso, milk.
-              </p>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Banana Latte</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.50</span>
+                </div>
+                <p class="menu-desc">House-made banana syrup, double shot, steamed milk.</p>
+              </div>
+
+               <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Honey Vanilla Matcha</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$7.00</span>
+                </div>
+                <p class="menu-desc">Ceremonial grade matcha, oat milk, real honey, vanilla.</p>
+              </div>
             </div>
+
+            <div>
+              <h3 class="menu-group-title">Seasonal</h3>
+              
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">The Pumpkin</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.50</span>
+                </div>
+                <p class="menu-desc">Brown sugar, real pumpkin puree, spice blend.</p>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">The Cozy</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.25</span>
+                </div>
+                <p class="menu-desc">Cookie butter, cocoa, brown sugar. <em class="small">(8oz Hot)</em></p>
+              </div>
+            </div>
+
+             <div class="mt-5 d-none d-lg-block">
+                <img src="assets/interior-image.jpg" alt="Latte Art" class="img-fluid shadow-sm">
+             </div>
+
           </div>
 
           <div class="col-lg-6">
-            <h2 class="mb-4 display-6 border-bottom pb-2">Seasonal Drinks</h2>
-            <div class="menu-item mb-4">
-              <div class="d-flex justify-content-between align-items-baseline">
-                <h3 class="h4 fw-bold mb-1">The Pumpkin</h3>
-                <span class="fs-5 fw-bold">$6.50</span>
+            
+            <div class="mb-5">
+              <h3 class="menu-group-title">Espresso Bar</h3>
+              
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Espresso</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$4.00</span>
+                </div>
+                <p class="menu-desc">Double shot. Global roasters, rotated weekly.</p>
               </div>
-              <p class="text-muted mb-0">
-                Brown sugar, real pumpkin, pumpkin spice, double espresso, milk.
-              </p>
-            </div>
-            <div class="menu-item mb-4">
-              <div class="d-flex justify-content-between align-items-baseline">
-                <h3 class="h4 fw-bold mb-1">The Cozy</h3>
-                <span class="fs-5 fw-bold">$6.25</span>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Americano</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$4.00</span>
+                </div>
+                <p class="menu-desc">Double shot over hot water.</p>
               </div>
-              <p class="text-muted mb-0">
-                Cookie butter, cocoa, brown sugar, double espresso, milk.
-                <em class="small">(8oz only)</em>
-              </p>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Cortado</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$5.00</span>
+                </div>
+                <p class="menu-desc">Equal parts espresso and steamed milk. 4oz.</p>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Cappuccino</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$5.50</span>
+                </div>
+                <p class="menu-desc">Double shot, heavy foam.</p>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Latte</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.00</span>
+                </div>
+                <p class="menu-desc">Double shot, microfoam.</p>
+              </div>
             </div>
+
+            <div class="mb-5">
+               <h3 class="menu-group-title">Not Coffee</h3>
+                <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Matcha Latte</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.00</span>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Chai Latte</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$6.00</span>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Hot Chocolate</span>
+                  <span class="menu-dots"></span>
+                  <span class="menu-item-price">$5.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="modifier-box">
+              <div class="row">
+                <div class="col-6 border-end">
+                  <h5 class="fw-bold text-uppercase h6 mb-3">Milks</h5>
+                  <ul class="list-unstyled mb-0 small text-muted">
+                    <li class="mb-1">Whole Milk</li>
+                    <li class="mb-1">Oat Milk</li>
+                    <li>Almond Milk</li>
+                  </ul>
+                  <div class="mt-3 badge bg-black text-white rounded-0 fw-normal py-2">
+                    No charge for alt milks.
+                  </div>
+                </div>
+                <div class="col-6 ps-4">
+                  <h5 class="fw-bold text-uppercase h6 mb-3">Syrups <span class="text-muted fw-normal ms-1">(+$0.50)</span></h5>
+                  <ul class="list-unstyled mb-0 small text-muted">
+                    <li class="mb-1">House Vanilla</li>
+                    <li class="mb-1">Raw Honey</li>
+                    <li class="mb-1">Lavender</li>
+                    <li>Caramel</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="py-5 text-white"
-      style="
-        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-          url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1887&auto=format&fit=crop')
-            center/cover no-repeat;
-        background-attachment: fixed;
-      "
-    >
-      <div class="container py-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="text-center mb-5">
-              <h2 class="display-4 fw-bold text-white">Espresso Bar</h2>
-              <p class="text-white-50">Sourced globally, roasted locally.</p>
-            </div>
-
-            <ul class="list-unstyled">
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Espresso</span>
-                <span class="fs-5">$4.00</span>
-              </li>
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Americano</span>
-                <span class="fs-5">$4.00</span>
-              </li>
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Cortado</span>
-                <span class="fs-5">$5.00</span>
-              </li>
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Cappuccino</span>
-                <span class="fs-5">$5.50</span>
-              </li>
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Latte</span>
-                <span class="fs-5">$6.00</span>
-              </li>
-              <li
-                class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2"
-              >
-                <span class="fs-5 fw-bold">Matcha</span>
-                <span class="fs-5">$6.50</span>
-              </li>
-            </ul>
-
-            <div class="row mt-5 pt-2">
-              <div class="col-md-6 mb-4 mb-md-0">
-                <h5 class="fw-bold text-uppercase mb-3 text-white">Milks</h5>
-                <p class="mb-1 text-white-50">Whole Milk</p>
-                <p class="mb-1 text-white-50">Oat</p>
-                <p class="mb-3 text-white-50">Almond</p>
-                <div class="border border-white p-2 d-inline-block mt-2">
-                  <small class="fw-bold text-uppercase text-white"
-                    >No charge for alt milk.</small
-                  >
-                </div>
-              </div>
-              <div class="col-md-6">
-                <h5 class="fw-bold text-uppercase mb-3 text-white">Syrups</h5>
-                <ul class="list-unstyled text-white-50">
-                  <li class="d-flex justify-content-between">
-                    <span>Simple</span>
-                    <span>Included</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <span>Honey</span>
-                    <span>+$0.50</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <span>Vanilla</span>
-                    <span>+$0.50</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="py-5 bg-white border-top">
+      <div class="container text-center">
+        <h2 class="display-6 font-serif mb-4">In a rush?</h2>
+        <a href="order.html" class="btn btn-outline-dark rounded-0 px-5 py-3">ORDER AHEAD FOR PICKUP</a>
       </div>
     </section>
 
     <footer id="contact" class="footer-section bg-black text-secondary py-5">
-      <div class="container py-4">
+      <div class="container">
         <div class="row gy-5">
           <div class="col-md-4">
             <h4 class="text-white mb-3">Visit Us</h4>
@@ -232,14 +334,32 @@
                   <div>
                     <strong class="text-white">Address:</strong><br />
                     <a
-                      href="https://maps.google.com/?q=1859+W+Adams+Blvd,+Los+Angeles,+CA+90018"
+                      href="https://maps.apple.com/?q=1859+W+Adams+Blvd,+Los+Angeles,+CA+90018"
                       target="_blank"
                       class="text-decoration-none text-secondary"
                     >
                       1859 W Adams Blvd<br />
                       Los Angeles, CA 90018
                     </a>
+                    <div class="small text-muted mt-1">(Adams Normandie)</div>
                   </div>
+                </div>
+
+                <div class="map-buttons mt-3 ps-4 ms-2">
+                  <a
+                    href="https://maps.apple.com/?q=1859+W+Adams+Blvd,+Los+Angeles,+CA+90018"
+                    class="btn btn-outline-light btn-sm rounded-0 me-2 mb-2"
+                    target="_blank"
+                  >
+                    <i class="bi bi-apple me-1"></i> Apple Maps
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Espresso+Social+Club+1859+W+Adams+Blvd"
+                    class="btn btn-outline-light btn-sm rounded-0 mb-2"
+                    target="_blank"
+                  >
+                    <i class="bi bi-google me-1"></i> Google Maps
+                  </a>
                 </div>
               </li>
 
@@ -340,7 +460,7 @@
                   <i class="bi bi-yelp"></i> Yelp
                 </a>
                 <a
-                  href="https://www.google.com/search?q=espresso+social+club+&sca_esv=9cf56067a199ff72&rlz=1C5CHFA_en&sxsrf=AE3TifM_mK7zD2rtBpRAfPtWalpvNNl5vg%3A1767727611330&ei=-2Fdadb8E7P5kPIP9czpUA&ved=0ahUKEwiW5tTC0veRAxWzPEQIHXVmGgoQ4dUDCBE&uact=5&oq=espresso+social+club+&gs_lp=Egxnd3Mtd2l6LXNlcnAiFWVzcHJlc3NvIHNvY2lhbCBjbHViIDIEECMYJzIEECMYJzIEECMYJzITEC4YgAQYFBjHARiHAhiOBRivATIFEAAYgAQyBRAAGIAEMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I4wNQ7wFY7wFwAXgAkAEAmAFcoAFcqgEBMbgBA8gBAPgBAZgCAqACasICCBAAGLADGO8FwgILEAAYsAMYogQYiQXCAgsQABiABBiwAxiiBJgDAIgGAZAGBJIHAzEuMaAHww2yBwMwLjG4B2fCBwcwLjEuMC4xyAcKgAgA&sclient=gws-wiz-serp#lrd=0x80c2b90011e6b3bd:0xa1f162332d4bc3a4,1,,,"
+                  href="https://www.google.com/search?q=espresso+social+club+&sca_esv=9cf56067a199ff72&rlz=1C5CHFA_en&sxsrf=AE3TifM_mK7zD2rtBpRAfPtWalpvNNl5vg%3A1767727611330&ei=-2Fdadb8E7P5kPIP9czpUA&ved=0ahUKEwiW5tTC0veRAxWzPEQIHXVmGgoQ4dUDCBE&uact=5&oq=espresso+social+club+&gs_lp=Egxnd3Mtd2l6LXNlcnAiFWVzcHJlc3NvIHNvY2lhbCBjbHViIDIEECMYJzIEECMYJzIEECMYJzITEC4YgAQYFBjHARiHAhiOBRivATIFEAAYgAQyBRAAGIAEMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I4wNQ7wFY7wFwAXgAkAEAmAFcoAFcqgEBMbgBA8gBAPgBAZgCAqACasICCBAAGLADGO8FwgILEAAYsAMYogQYiQXCAgsQABiABBiwAxiiBJgDAIgGAZAGBJIHAzEuMaAHww2yBwMwLjG4B2fCBwcwLjEuMC4xyAcKgAgA&sclient=gws-wiz-serp#lrd=0x80c2b90011e6b3bd:0xa1f162332d4bc3a4,1,,,,"
                   target="_blank"
                   class="btn btn-outline-light btn-sm rounded-0"
                 >
